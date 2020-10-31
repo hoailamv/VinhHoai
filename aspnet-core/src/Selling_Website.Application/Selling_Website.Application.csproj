@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Selling_Website</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Selling_Website.Domain\Selling_Website.Domain.csproj" />
+    <ProjectReference Include="..\Selling_Website.Application.Contracts\Selling_Website.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="3.3.0" />
+  </ItemGroup>
+
+</Project>
