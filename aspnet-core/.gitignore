@@ -258,3 +258,6 @@ src/Selling_Website.IdentityServer/Logs/*
 src/Selling_Website.HttpApi.Host/Logs/*
 src/Selling_Website.HttpApi.Host/Logs/*
 src/Selling_Website.DbMigrator/Logs/*
+
+# config database
+appsettings.json
