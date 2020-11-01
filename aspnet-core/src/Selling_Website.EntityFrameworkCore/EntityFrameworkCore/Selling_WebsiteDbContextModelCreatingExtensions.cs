@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Selling_Website.Entities;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Selling_Website.EntityFrameworkCore
 {
@@ -17,6 +19,32 @@ namespace Selling_Website.EntityFrameworkCore
             //    b.ConfigureByConvention(); //auto configure for the base class props
             //    //...
             //});
+
+            builder.Entity<Customer>(b =>
+            {
+                b.ToTable("Customer");
+                b.ConfigureByConvention();
+            });
+            builder.Entity<Product>(b =>
+            {
+                b.ToTable("Product");
+                b.ConfigureByConvention();
+            }); 
+            builder.Entity<Order>(b =>
+            {
+                b.ToTable("Order");
+                b.ConfigureByConvention();
+            }); 
+            builder.Entity<OrderDetail>(b =>
+            {
+                b.ToTable("OrderDetail");
+                b.ConfigureByConvention();
+            });
+            builder.Entity<Category>(b =>
+            {
+                b.ToTable("Category");
+                b.ConfigureByConvention();
+            });
         }
     }
 }
