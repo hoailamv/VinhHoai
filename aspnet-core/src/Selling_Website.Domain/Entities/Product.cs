@@ -8,8 +8,8 @@ namespace Selling_Website.Entities
     {
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        [ForeignKey("Category")]
         public Guid? CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
         public int? Price { get; set; }
         public string Quantity { get; set; }

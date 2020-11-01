@@ -6,13 +6,14 @@ namespace Selling_Website.Entities
 {
     public class OrderDetail : FullAuditedAggregateRoot<Guid>
     {
-        [ForeignKey("Products")]
-        public Guid? ProductID { get; set; }
-        public Product Product { get; set; }
-        [ForeignKey("Order")]
-        public Guid? OrderID { get; set; }
+        public Guid? OrderId { get; set; }
+        [ForeignKey("OrderId")]
         public Order Order { get; set; }
         public int? Price { get; set; }
         public string Quantity { get; set; }
+        public string OrderName { get; set; }
+        public Guid? CustomerId { get; set; }
+        [ForeignKey("CustomerId")]
+        public Customer Customer { get; set; }
     }
 }

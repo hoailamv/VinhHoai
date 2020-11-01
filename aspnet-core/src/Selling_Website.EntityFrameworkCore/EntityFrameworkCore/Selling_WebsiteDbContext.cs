@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Selling_Website.Entities;
 using Selling_Website.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -21,10 +22,11 @@ namespace Selling_Website.EntityFrameworkCore
     public class Selling_WebsiteDbContext : AbpDbContext<Selling_WebsiteDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
-
-        /* Add DbSet properties for your Aggregate Roots / Entities here.
-         * Also map them inside Selling_WebsiteDbContextModelCreatingExtensions.ConfigureSelling_Website
-         */
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail>  OrderDetails { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         public Selling_WebsiteDbContext(DbContextOptions<Selling_WebsiteDbContext> options)
             : base(options)

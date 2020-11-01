@@ -7,10 +7,7 @@ namespace Selling_Website.Entities
 {
     public class Order : FullAuditedAggregateRoot<Guid>
     {
-        public DateTime? OrderDate { get; set; }
-        [ForeignKey("Customer")]
-        public Guid? CustomerID { get; set; }
-        public Customer Customer { get; set; }
+        public DateTime? OrderDate { get; set;}
         public IList<OrderDetail> OrderDetails { get; set; }
     }
 }
