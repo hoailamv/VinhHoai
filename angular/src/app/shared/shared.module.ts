@@ -4,9 +4,16 @@ import { NgModule } from '@angular/core';
 import { ThemeBasicModule } from '@abp/ng.theme.basic';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
 import { NgxValidateCoreModule } from '@ngx-validate/core';
+import { AppTopBarComponent } from './layout/top-bar/app-top-bar.component';
+import { AppFooterComponent } from './layout/footer/app-footer.component';
+import { AppLayoutComponent } from './layout/application-layout/app-layout.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AppFooterComponent,
+    AppTopBarComponent,
+    AppLayoutComponent
+  ],
   imports: [
     CoreModule,
     ThemeSharedModule,
@@ -19,8 +26,11 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
     ThemeSharedModule,
     ThemeBasicModule,
     NgbDropdownModule,
-    NgxValidateCoreModule
+    NgxValidateCoreModule,
+    AppFooterComponent,
+    AppTopBarComponent,
+    AppLayoutComponent
   ],
   providers: []
 })
-export class SharedModule {}
+export class SharedModule { }
