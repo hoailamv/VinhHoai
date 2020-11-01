@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Security.Policy;
-using System.Text;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Selling_Website.Entities

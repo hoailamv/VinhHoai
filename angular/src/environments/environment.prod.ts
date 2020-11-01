@@ -10,7 +10,7 @@ export const environment = {
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44364',
+    issuer: 'https://localhost:44387',
     redirectUri: baseUrl,
     clientId: 'Selling_Website_App',
     responseType: 'code',
@@ -18,7 +18,7 @@ export const environment = {
   },
   apis: {
     default: {
-      url: 'https://localhost:44364',
+      url: 'https://localhost:44387',
       rootNamespace: 'Selling_Website',
     },
   },
