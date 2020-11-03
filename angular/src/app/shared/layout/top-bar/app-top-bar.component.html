@@ -1,15 +1,15 @@
 <div class="site-navbar bg-white py-2">
 
-  <div class="search-wrap">
+  <!-- <div class="search-wrap">
     <div class="container">
       <a href="javascript:void(0)" class="search-close js-search-close"><span class="icon-close2"></span></a>
       <form action="#" method="post">
         <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
       </form>
     </div>
-  </div>
+  </div> -->
 
-  <div class="container">
+  <div class="container d-contents">
     <div class="d-flex align-items-center justify-content-between">
       <div class="logo">
         <div class="site-logo">
@@ -19,27 +19,22 @@
       <div class="main-nav d-none d-lg-block">
         <nav class="site-navigation text-right text-md-center" role="navigation">
           <ul class="site-menu js-clone-nav d-none d-lg-block">
-            <li class="has-children active">
-              <a href="javascript:void(0)">Home</a>
-              <ul class="dropdown">
-                <li><a href="javascript:void(0)">Menu One</a></li>
-                <li><a href="javascript:void(0)">Menu Two</a></li>
-                <li><a href="javascript:void(0)">Menu Three</a></li>
-                <li class="has-children">
-                  <a href="javascript:void(0)">Sub Menu</a>
-                  <ul class="dropdown">
-                    <li><a href="javascript:void(0)">Menu One</a></li>
-                    <li><a href="javascript:void(0)">Menu Two</a></li>
-                    <li><a href="javascript:void(0)">Menu Three</a></li>
-                  </ul>
-                </li>
-              </ul>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./home'">Home</a>
             </li>
 
-            <li><a href="javascript:void(0)">Tất cả sản phẩm</a></li>
-            <li><a href="javascript:void(0)">Về chúng tôi</a></li>
-            <li><a href="javascript:void(0)">Liên hệ</a></li>
-            <li><a href="javascript:void(0)">Đăng nhập</a></li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./shop'">Tất cả sản phẩm</a>
+            </li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./about'">Về chúng tôi</a>
+            </li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./contact'">Liên hệ</a>
+            </li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./login'">Đăng nhập</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -48,7 +43,8 @@
             class="icon-search"></span></a>
         <a href="javascript:void(0)" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
         <a href="javascript:void(0)" class="icons-btn d-inline-block bag">
-          <span class="icon-shopping-bag"></span>
+          <!-- <mat-icon>shopping_basket</mat-icon> -->
+          <i class="marterial-icon">shopping_basket</i>
           <span class="number">2</span>
         </a>
         <a href="javascript:void(0)" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span

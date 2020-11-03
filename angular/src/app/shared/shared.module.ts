@@ -7,6 +7,7 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { AppTopBarComponent } from './layout/top-bar/app-top-bar.component';
 import { AppFooterComponent } from './layout/footer/app-footer.component';
 import { AppLayoutComponent } from './layout/application-layout/app-layout.component';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppLayoutComponent } from './layout/application-layout/app-layout.compo
     ThemeSharedModule,
     ThemeBasicModule,
     NgbDropdownModule,
-    NgxValidateCoreModule
+    NgxValidateCoreModule,
+    MatIconModule
   ],
   exports: [
     CoreModule,
@@ -29,7 +31,8 @@ import { AppLayoutComponent } from './layout/application-layout/app-layout.compo
     NgxValidateCoreModule,
     AppFooterComponent,
     AppTopBarComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    MatIconModule
   ],
   providers: []
 })
