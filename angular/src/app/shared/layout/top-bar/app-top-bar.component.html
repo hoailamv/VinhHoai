@@ -13,7 +13,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <div class="logo">
         <div class="site-logo">
-          <a href="javascript:void(0)" class="js-logo-clone">Stupid Men</a>
+          <a [routerLink]="'./home'" class="js-logo-clone">DOAN Shop</a>
         </div>
       </div>
       <div class="main-nav d-none d-lg-block">
@@ -38,14 +38,11 @@
           </ul>
         </nav>
       </div>
-      <div class="icons">
-        <a href="javascript:void(0)" class="icons-btn d-inline-block js-search-open"><span
-            class="icon-search"></span></a>
-        <a href="javascript:void(0)" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
-        <a href="javascript:void(0)" class="icons-btn d-inline-block bag">
-          <!-- <mat-icon>shopping_basket</mat-icon> -->
-          <i class="marterial-icon">shopping_basket</i>
-          <span class="number">2</span>
+      <div class="icons" [routerLinkActive]="'active'">
+        <a [routerLink]="'./payment'" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+        <a [routerLink]="'./payment'" class="icons-btn d-inline-block bag">
+          <mat-icon>shopping_basket</mat-icon>
+          <span class="number">20</span>
         </a>
         <a href="javascript:void(0)" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
             class="icon-menu"></span></a>

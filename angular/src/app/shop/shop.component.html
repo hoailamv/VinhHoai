@@ -49,22 +49,23 @@
         <div class="row mb-5">
 
           <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
               <img src="../../assets/images/prod_2.png" alt="Image" class="img-fluid">
             </a>
-            <h2 class="item-title"><a href="#">Gray Shoe</a></h2>
+            <h2 class="item-title"><a (click)="clickToReDirect()">Gray Shoe</a></h2>
             <strong class="item-price">$20.00</strong>
-          </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_3.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
           </div>
 
           <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
+              <img src="../../assets/images/prod_3.png" alt="Image" class="img-fluid">
+            </a>
+            <h2 class="item-title"><a (click)="clickToReDirect()">Blue Shoe High Heels</a></h2>
+            <strong class="item-price"><del>$46.00</del> $28.00</strong>
+          </div>
+
+          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
               <img src="../../assets/images/model_5.png" alt="Image" class="img-fluid">
             </a>
             <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
@@ -79,52 +80,9 @@
             </div>
 
           </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_1.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-            <div class="star-rating">
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-            </div>
-          </div>
 
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/model_1.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-          </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/model_7.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
-            <strong class="item-price">$58.00</strong>
-          </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_2.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Gray Shoe</a></h2>
-            <strong class="item-price">$20.00</strong>
-          </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_3.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-          </div>
-
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
+          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
               <img src="../../assets/images/model_5.png" alt="Image" class="img-fluid">
             </a>
             <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
@@ -139,8 +97,8 @@
             </div>
 
           </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
+          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
               <img src="../../assets/images/prod_1.png" alt="Image" class="img-fluid">
             </a>
             <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
@@ -154,18 +112,18 @@
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
+          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
               <img src="../../assets/images/model_1.png" alt="Image" class="img-fluid">
             </a>
-            <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
+            <h2 class="item-title"><a (click)="clickToReDirect()">Smooth Cloth</a></h2>
             <strong class="item-price"><del>$46.00</del> $28.00</strong>
           </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block bg-color-fix">
+          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
+            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
               <img src="../../assets/images/model_7.png" alt="Image" class="img-fluid">
             </a>
-            <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
+            <h2 class="item-title"><a (click)="clickToReDirect()">Yellow Jacket</a></h2>
             <strong class="item-price">$58.00</strong>
           </div>
         </div>

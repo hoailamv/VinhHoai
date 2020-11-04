@@ -21,7 +21,7 @@ import { MatIconModule } from '@angular/material/icon'
     ThemeBasicModule,
     NgbDropdownModule,
     NgxValidateCoreModule,
-    MatIconModule
+    MatIconModule,
   ],
   exports: [
     CoreModule,

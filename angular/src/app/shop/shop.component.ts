@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { AppBaseComponent } from '../shared/base.component';
 
 @Component({
   templateUrl: './shop.component.html',
@@ -10,8 +11,14 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 
-export class ShopComponent implements OnInit {
-  constructor() { }
+export class ShopComponent extends AppBaseComponent implements OnInit {
+  constructor(injector: Injector) {
+    super(injector)
+  }
 
   ngOnInit() { }
+
+  clickToReDirect() {
+    this.redirect("/shop/product-detail")
+  }
 }
