@@ -12,7 +12,11 @@ import { NgxsModule } from '@ngxs/store';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { APP_ROUTE_PROVIDER } from './route.provider';
+import { SharedModule } from './shared/shared.module';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+
+
+const LOGGERS = [NgxsLoggerPluginModule.forRoot({ disabled: true })];
 
 @NgModule({
   imports: [
@@ -29,9 +33,10 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     SettingManagementConfigModule.forRoot(),
     NgxsModule.forRoot(),
     ThemeBasicModule.forRoot(),
+    SharedModule,
+    ...(environment.production ? [] : LOGGERS)
   ],
   declarations: [AppComponent],
-  providers: [APP_ROUTE_PROVIDER],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

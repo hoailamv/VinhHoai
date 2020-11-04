@@ -1,0 +1,52 @@
+<div class="site-navbar bg-white py-2">
+
+  <!-- <div class="search-wrap">
+    <div class="container">
+      <a href="javascript:void(0)" class="search-close js-search-close"><span class="icon-close2"></span></a>
+      <form action="#" method="post">
+        <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+      </form>
+    </div>
+  </div> -->
+
+  <div class="container d-contents">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <div class="site-logo">
+          <a [routerLink]="'./home'" class="js-logo-clone">DOAN Shop</a>
+        </div>
+      </div>
+      <div class="main-nav d-none d-lg-block">
+        <nav class="site-navigation text-right text-md-center" role="navigation">
+          <ul class="site-menu js-clone-nav d-none d-lg-block">
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./home'">Home</a>
+            </li>
+
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./shop'">Tất cả sản phẩm</a>
+            </li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./about'">Về chúng tôi</a>
+            </li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./contact'">Liên hệ</a>
+            </li>
+            <li [routerLinkActive]="'active'">
+              <a [routerLink]="'./login'">Đăng nhập</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="icons" [routerLinkActive]="'active'">
+        <a [routerLink]="'./payment'" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+        <a [routerLink]="'./payment'" class="icons-btn d-inline-block bag">
+          <mat-icon>shopping_basket</mat-icon>
+          <span class="number">20</span>
+        </a>
+        <a href="javascript:void(0)" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+            class="icon-menu"></span></a>
+      </div>
+    </div>
+  </div>
+</div>
