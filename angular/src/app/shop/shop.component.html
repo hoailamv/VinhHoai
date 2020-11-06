@@ -1,7 +1,7 @@
 <div class="custom-border-bottom py-3">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong
+      <div class="col-md-12 mb-0"><a (click)="clickToRedirectHome()">Home</a> <span class="mx-2 mb-0">/</span> <strong
           class="text-black">Shop</strong></div>
     </div>
   </div>
@@ -48,96 +48,28 @@
         </div>
         <div class="row mb-5">
 
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_2.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a (click)="clickToReDirect()">Gray Shoe</a></h2>
-            <strong class="item-price">$20.00</strong>
-          </div>
-
-          <div class="col-lg-6 col-md-6 item-entry mb-4">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_3.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a (click)="clickToReDirect()">Blue Shoe High Heels</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-          </div>
-
-          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/model_5.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-
-            <div class="star-rating">
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
+          <ng-container *ngFor="let item of listProduct">
+            <div class="col-lg-6 col-md-6 item-entry mb-4">
+              <a (click)="clickToReDirect(item.id)" class="product-item md-height bg-gray d-block bg-color-fix">
+                <img src="../../assets/images/prod_2.png" alt="Image" class="img-fluid">
+              </a>
+              <h2 class="item-title"><a (click)="clickToReDirect(item.id)">{{item.productname}}</a></h2>
+              <strong class="item-price">{{item.price}}</strong>
             </div>
+          </ng-container>
 
-          </div>
-
-          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/model_5.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-
-            <div class="star-rating">
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-            </div>
-
-          </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/prod_1.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-            <div class="star-rating">
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/model_1.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a (click)="clickToReDirect()">Smooth Cloth</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-          </div>
-          <div class="col-lg-6 col-md-6 item-entry mb-4" (click)="clickToReDirect()">
-            <a (click)="clickToReDirect()" class="product-item md-height bg-gray d-block bg-color-fix">
-              <img src="../../assets/images/model_7.png" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a (click)="clickToReDirect()">Yellow Jacket</a></h2>
-            <strong class="item-price">$58.00</strong>
-          </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="site-block-27">
               <ul>
-                <li><a href="#">&lt;</a></li>
+                <li><a (click)="onClickToBackPage()">&lt;</a></li>
                 <li class="active"><span>1</span></li>
                 <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
                 <li><a href="#">4</a></li>
                 <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
+                <li><a (click)="onClickToNextPage()">&gt;</a></li>
               </ul>
             </div>
           </div>
@@ -148,12 +80,12 @@
         <div class="border p-4 rounded mb-4">
           <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
           <ul class="list-unstyled mb-0">
-            <li class="mb-1"><a href="#" class="d-flex"><span>Men</span> <span
-                  class="text-black ml-auto">(2,220)</span></a></li>
-            <li class="mb-1"><a href="#" class="d-flex"><span>Women</span> <span
-                  class="text-black ml-auto">(2,550)</span></a></li>
-            <li class="mb-1"><a href="#" class="d-flex"><span>Children</span> <span
-                  class="text-black ml-auto">(2,124)</span></a></li>
+            <li class="mb-1"><a (click)="onClickToFilterByCategoryName(categoryList[0])" class="d-flex"><span>Men</span>
+                <span class="text-black ml-auto">(2,220)</span></a></li>
+            <li class="mb-1"><a (click)="onClickToFilterByCategoryName(categoryList[1])"
+                class="d-flex"><span>Women</span> <span class="text-black ml-auto">(2,550)</span></a></li>
+            <li class="mb-1"><a (click)="onClickToFilterByCategoryName(categoryList[2])"
+                class="d-flex"><span>Children</span> <span class="text-black ml-auto">(2,124)</span></a></li>
           </ul>
         </div>
 
@@ -212,18 +144,21 @@
     <div class="row align-items-stretch">
       <div class="col-lg-8">
         <div class="product-item sm-height full-height bg-gray">
-          <a href="#" class="product-category">Women <span>25 items</span></a>
+          <a (click)="onClickToFilterByCategoryName(categoryList[0])" class="product-category">Women <span>25
+              items</span></a>
           <img src="../../assets/images/model_4.png" alt="Image" class="img-fluid">
         </div>
       </div>
       <div class="col-lg-4">
         <div class="product-item sm-height bg-gray mb-4">
-          <a href="#" class="product-category">Men <span>25 items</span></a>
+          <a (click)="onClickToFilterByCategoryName(categoryList[1])" class="product-category">Men <span>25
+              items</span></a>
           <img src="../../assets/images/model_5.png" alt="Image" class="img-fluid">
         </div>
 
         <div class="product-item sm-height bg-gray">
-          <a href="#" class="product-category">Shoes <span>25 items</span></a>
+          <a (click)="onClickToFilterByCategoryName(categoryList[2])" class="product-category">Shoes <span>25
+              items</span></a>
           <img src="../../assets/images/model_6.png" alt="Image" class="img-fluid">
         </div>
       </div>
