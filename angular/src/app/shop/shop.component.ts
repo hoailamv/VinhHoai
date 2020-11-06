@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { AppBaseComponent } from '../shared/base.component';
 import { CategoryService } from '../shared/service/category/service';
-import { GetProductDto } from '../shared/service/product/models';
+import { CreateOrEditProductDto, GetProductDto } from '../shared/service/product/models';
 import { ProductService } from '../shared/service/product/service/product-services';
 
 @Component({
@@ -22,6 +22,7 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
   public countOfList: number = 0;
   public categoryId = "";
   public categoryList = ['women', 'men', 'shoe']
+  vmaa:CreateOrEditProductDto = new CreateOrEditProductDto();
 
   constructor(injector: Injector,
     private readonly _productService: ProductService,
@@ -30,6 +31,14 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.vmaa.price = 20;
+    this.vmaa.productdescription = "demo";
+    this.vmaa.productname = "Suger Dady";
+    this.vmaa.quantity = 20;
+
+    this._productService.saveByInput(this.vmaa).subscribe(data =>{});
+
     this._productService.getListByPage(this.page, this.maxPage).subscribe(data => {
       this.listProduct = data;
       data.length = this.countOfList;
