@@ -16,10 +16,9 @@ namespace Selling_Website.Products
         {
         }
 
-        public async Task<List<GetProductDto>> GetListByPage(int page, int maxsite)
+        public async Task<List<GetProductDto>> GetListByPage()
         {
-            var list = Repository
-                .Take(page).Skip(page * maxsite).ToList();
+            var list = Repository.ToList();
             return ObjectMapper.Map<List<Product>, List<GetProductDto>>(list);
         }
 

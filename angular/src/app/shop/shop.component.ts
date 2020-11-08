@@ -31,18 +31,9 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.vmaa.price = 20;
-    this.vmaa.productdescription = "demo";
-    this.vmaa.productname = "Suger Dady";
-    this.vmaa.quantity = 20;
-
-    this._productService.saveByInput(this.vmaa).subscribe(data =>{});
-
-    this._productService.getListByPage(this.page, this.maxPage).subscribe(data => {
+    this._productService.getListByPage().subscribe(data => {
+      alert(data.length)
       this.listProduct = data;
-      data.length = this.countOfList;
-      this.countOfList = parseInt((this.countOfList / 10).toString());
     });
   }
 

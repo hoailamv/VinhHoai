@@ -5,7 +5,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Selling_Website</RootNamespace>
-  </PropertyGroup>
+  </PropertyGroup>  
 
   <ItemGroup>
     <ProjectReference Include="..\Selling_Website.Domain.Shared\Selling_Website.Domain.Shared.csproj" />

@@ -36,5 +36,10 @@ export class OrderDetailService {
     return this.restService.request({ url: `/api/app/OrderDetail/getOrderDetailRegisted/${id}`, method: 'GET' },
       { apiName: this.apiName });
   }
+  getOrderCart(id: string): Observable<GetOrderDetailDto[]> {
+    return this.restService.request({ url: '/api/app/orderDetail/orderDetailbyOrdername?orderid=' + id, method: 'GET' },
+      { apiName: this.apiName }
+    );
+  }
 
 }

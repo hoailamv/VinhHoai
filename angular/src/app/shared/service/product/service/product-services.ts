@@ -12,7 +12,7 @@ export class ProductService {
 
   }
 
-  getById(id: string): Observable<GetProductForEditDto> {
+  getById(id: string): Observable<GetProductDto> {
     return this.restService.request({ url: `/api/app/Product/${id}`, method: 'GET' }, { apiName: this.apiName });
   }
 
@@ -32,9 +32,8 @@ export class ProductService {
     return this.restService.request({ url: '/api/app/Product', method: 'GET' }, { apiName: this.apiName });
   }
 
-  getListByPage(page: number, max: number): Observable<GetProductDto[]> {
-    var header = `page=${page}&maxsite=${max}`
-    return this.restService.request({ url: `/api/app/product/byPage?${header}`, method: 'GET' },
+  getListByPage(): Observable<GetProductDto[]> {
+    return this.restService.request({ url: `/api/app/product/byPage`, method: 'GET' },
       { apiName: this.apiName });
   }
 
