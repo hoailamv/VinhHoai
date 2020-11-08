@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Selling_Website.Localization;
+﻿using Selling_Website.Localization;
 using Volo.Abp.Application.Services;
 
 namespace Selling_Website
