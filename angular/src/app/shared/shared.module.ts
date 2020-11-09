@@ -1,5 +1,5 @@
 import { CoreModule } from '@abp/ng.core';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { ThemeBasicModule } from '@abp/ng.theme.basic';
 import { ThemeSharedModule } from '@abp/ng.theme.shared';
@@ -7,7 +7,8 @@ import { NgxValidateCoreModule } from '@ngx-validate/core';
 import { AppTopBarComponent } from './layout/top-bar/app-top-bar.component';
 import { AppFooterComponent } from './layout/footer/app-footer.component';
 import { AppLayoutComponent } from './layout/application-layout/app-layout.component';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { MatIconModule } from '@angular/material/icon'
     NgbDropdownModule,
     NgxValidateCoreModule,
     MatIconModule,
+    NgbModule,
+    MatDialogModule
   ],
   exports: [
     CoreModule,

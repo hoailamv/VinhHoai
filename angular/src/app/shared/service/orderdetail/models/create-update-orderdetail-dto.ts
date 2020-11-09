@@ -6,6 +6,7 @@ export class CreateOrEditOrderDetailDto extends EntityDto<string>{
   quantity: number;
   ordername: string;
   customerId: string;
+  imagesource: string;
 
   constructor(initial: Partial<CreateOrEditOrderDetailDto> = {}) {
     super(initial);

@@ -22,7 +22,7 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
   public countOfList: number = 0;
   public categoryId = "";
   public categoryList = ['women', 'men', 'shoe']
-  vmaa:CreateOrEditProductDto = new CreateOrEditProductDto();
+  vmaa: CreateOrEditProductDto = new CreateOrEditProductDto();
 
   constructor(injector: Injector,
     private readonly _productService: ProductService,
@@ -32,7 +32,6 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
 
   ngOnInit(): void {
     this._productService.getListByPage().subscribe(data => {
-      alert(data.length)
       this.listProduct = data;
     });
   }
@@ -43,7 +42,7 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
     }
   }
   onClickToBackPage() {
-    if (this.page -1 > 0) {
+    if (this.page - 1 > 0) {
       this.page--
     }
   }
@@ -58,7 +57,7 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
     this.redirect("/shop/product-detail/" + id);
   }
 
-  clickToRedirectHome(){
+  clickToRedirectHome() {
     this.redirect("");
   }
 }

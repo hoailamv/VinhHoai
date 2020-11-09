@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   templateUrl: 'contact.component.html',
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ContactComponent implements OnInit {
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() { }
 }

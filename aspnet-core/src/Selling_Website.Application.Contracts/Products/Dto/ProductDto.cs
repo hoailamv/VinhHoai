@@ -10,5 +10,6 @@ namespace Selling_Website.Products.Dto
         public Guid? CategoryId { get; set; }
         public int? Price { get; set; }
         public string Quantity { get; set; }
-    }
+        public string ImgSource { get; set; }
+}
 }

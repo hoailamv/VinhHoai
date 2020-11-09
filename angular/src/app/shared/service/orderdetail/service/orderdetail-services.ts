@@ -41,5 +41,9 @@ export class OrderDetailService {
       { apiName: this.apiName }
     );
   }
+  countOfProductInCart(id: string): Observable<number> {
+    return this.restService.request({ url: `/api/app/orderDetail/countProduct/${id}`, method: 'POST' },
+      { apiName: this.apiName });
+  }
 
 }
