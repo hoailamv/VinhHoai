@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../service/order/service';
+import { OrderDetailService } from '../../service/orderdetail/service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppTopBarComponent implements OnInit {
-  constructor() { }
+  
+  constructor(private readonly _orderDetailService: OrderDetailService,
+    private readonly _oderService: OrderService) { }
 
   ngOnInit() { }
 }

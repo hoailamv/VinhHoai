@@ -30,5 +30,14 @@ namespace Selling_Website.Categories
                 .WhereIf(!string.IsNullOrWhiteSpace(input), x => x.CateName.Contains(input))
                 .Count();
         }
+
+        public async Task<string> GetCategoryName(string name)
+        {
+            return Repository
+                .Where(x => x.CateName.Contains(name))
+                .Select(x => x.Id)
+                .FirstOrDefault()
+                .ToString();
+        }
     }
 }

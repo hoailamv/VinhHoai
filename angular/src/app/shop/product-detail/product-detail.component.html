@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-0"><a [routerLink]="'./home'">Home</a> <span class="mx-2 mb-0">/</span> <a
-          [routerLink]="'./shop'">Shop</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Gay Shoe</strong>
+          [routerLink]="'./shop'">Shop</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{
+            vn.productname}}</strong>
       </div>
     </div>
   </div>
@@ -21,14 +22,14 @@
 
       </div>
       <div class="col-md-6">
-        <h2 class="text-black">Gray Shoe</h2>
+        <h2 class="text-black">{{vn.productname}}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus
           soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas,
           distinctio, aperiam, ratione dolore.</p>
         <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat
           dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste,
           velit aperiam quis.</p>
-        <p><strong class="text-primary h4">$50.00</strong></p>
+        <p><strong class="text-primary h4">${{vn.price}}</strong></p>
         <div class="mb-1 d-flex">
           <label for="option-sm" class="d-flex mr-3 mb-3">
             <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm"
@@ -60,7 +61,7 @@
           </div>
 
         </div>
-        <p><a href="javascript:void(0)" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
+        <p><a onclick="onClickaddtoCart()" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
 
       </div>
     </div>
