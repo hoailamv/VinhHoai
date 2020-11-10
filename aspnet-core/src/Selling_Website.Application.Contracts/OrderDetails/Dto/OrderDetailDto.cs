@@ -10,5 +10,6 @@ namespace Selling_Website.OrderDetails.Dto
         public string Quantity { get; set; }
         public string OrderName { get; set; }
         public Guid? CustomerId { get; set; }
+        public string Imagesource { get; set; }
     }
 }

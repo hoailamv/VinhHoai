@@ -33,6 +33,7 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
   ngOnInit(): void {
     this._productService.getListByPage().subscribe(data => {
       this.listProduct = data;
+      console.log(this.listProduct)
     });
   }
 

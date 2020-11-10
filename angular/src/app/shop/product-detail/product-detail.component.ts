@@ -48,7 +48,7 @@ export class ProductDetailComponent extends AppBaseComponent implements OnInit {
     this.od.quantity = 1
     this.od.price = this.od.quantity * this.vn.price
     this.od.quantity = this.quantity
-    this.od.imagesource = this.vn.imgsource;
+    this.od.imagesource = this.vn.imgSource;
     this._orderdetailservice.saveByInput(this.od).subscribe(data => { });
     this.redirect('/payment')
   }

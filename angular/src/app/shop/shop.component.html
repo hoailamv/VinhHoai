@@ -51,7 +51,8 @@
           <ng-container *ngFor="let item of listProduct">
             <div class="col-lg-6 col-md-6 item-entry mb-4">
               <a (click)="clickToReDirect(item.id)" class="product-item md-height bg-gray d-block bg-color-fix">
-                <img [src]="'../../assets/images/' + item.imgsource" alt="Image" class="img-fluid">
+                
+                <img [src]="'../../assets/images/' + item.imgSource + '.png'" alt="Image" class="img-fluid">
               </a>
               <h2 class="item-title"><a (click)="clickToReDirect(item.id)">{{item.productName}}</a></h2>
               <strong class="item-price">${{item.price}}</strong>
