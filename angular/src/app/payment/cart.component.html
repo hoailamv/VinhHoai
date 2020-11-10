@@ -27,25 +27,20 @@
               <ng-container *ngFor="let item of vm">
                 <tr>
                   <td class="product-thumbnail">
-                    <img [src]="'../../assets/images/' + item.imagesource +'.jpg'" alt="Image" class="img-fluid">
+                    <img [src]="'../../assets/images/' + item.imagesource +'.png'" alt="Image" class="img-fluid">
                   </td>
                   <td class="product-name">
-                    <h2 class="h5 text-black">{{item.ordername}}</h2>
+                    <h2 class="h5 text-black">{{item.orderName}}</h2>
                   </td>
                   <td>${{item.price}}</td>
                   <td>
                     <div class="input-group mb-3" style="max-width: 120px;">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                      </div>
-                      <input type="text" class="form-control text-center" value="{{item.quantity}}" placeholder=""
-                        aria-label="Example text with button addon" aria-describedby="button-addon1">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-primary js-btn-plus" type="button">&#43;</button>
-                      </div>
+
+                      <h2 type="text" class="form-control text-center">{{item.quantity}}</h2> 
+
                     </div>
                   </td>
-                  <td>${{item.price}}</td>
+                  <td>${{item.price * item.quantity}}</td>
                   <td><a (click)="onClicktoDeleteOrderDetail(item.id)" class="btn btn-primary height-auto btn-sm">X</a></td>
                 </tr>
               </ng-container>
@@ -71,7 +66,7 @@
             <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
           </div>
           <div class="col-md-4">
-            <button class="btn btn-primary btn-sm px-4">Apply Coupon</button>
+            <button (click)='onClickNoCoupon()' class="btn btn-primary btn-sm px-4">Apply Coupon</button>
           </div>
         </div>
       </div>

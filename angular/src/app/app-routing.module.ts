@@ -2,11 +2,13 @@ import { ApplicationLayoutComponent } from '@abp/ng.theme.basic';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './shared/layout/application-layout/app-layout.component';
+import {AuthGuard} from'@abp/ng.core';
 
 const routes1: Routes = [
   {
     path: '',
     component: AppLayoutComponent,
+    canActivate:[AuthGuard],
     children: [
       {
         path: '',
@@ -38,7 +40,12 @@ const routes1: Routes = [
         loadChildren: () => import('./payment/cart.module').then(m => m.CartModule)
       },
     ]
-  }
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('@abp/ng.account')
+      .then(m => m.AccountModule.forLazy({ redirectUrl: '/login' })),
+  },
 ]
 
 @NgModule({

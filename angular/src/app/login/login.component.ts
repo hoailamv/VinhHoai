@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Injector, OnInit } from '@angular/core';
+import { AppBaseComponent } from '../shared/base.component';
+import { AuthService } from '@abp/ng.core';
 @Component({
   templateUrl: 'login.component.html',
   styleUrls: [
@@ -10,8 +11,26 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 
-export class LoginComponent implements OnInit {
-  constructor() { }
+export class LoginComponent extends AppBaseComponent {
+  username: string;
+  password: string;
 
-  ngOnInit() { }
+  constructor(protected readonly injector: Injector,
+    private readonly authService: AuthService) {
+    super(injector);
+  }
+
+  login() {
+    this.setBusy();
+    this.authService.login(this.username, this.password).subscribe(result => {
+      this.notifySuccess(this.l('::LoginSuccessfully'));
+    },
+      () => {
+        this.clearBusy();
+        this.notifyError(this.l('::LoginUnsuccessfully'));
+      },
+      () => {
+        this.clearBusy();
+      })
+  }
 }

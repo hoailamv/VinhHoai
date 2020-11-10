@@ -6,7 +6,7 @@ export class ProductDto extends EntityDto<string>{
   CategoryId: string;
   price: number;
   quantity: number;
-  imgsource: string;
+  imgSource: string;
 
   constructor(initial: Partial<ProductDto> = {}) {
     super(initial);
