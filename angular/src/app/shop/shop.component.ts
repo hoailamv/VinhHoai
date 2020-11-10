@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { AppBaseComponent } from '../shared/base.component';
 import { CategoryService } from '../shared/service/category/service';
 import { CreateOrEditProductDto, GetProductDto } from '../shared/service/product/models';
@@ -16,7 +16,7 @@ import { ProductService } from '../shared/service/product/service/product-servic
 
 export class ShopComponent extends AppBaseComponent implements OnInit {
   public listProduct: GetProductDto[] = [];
-  public filter: string;
+  public filter: string = "";
   public page: number = 0
   public maxPage: number = 10;
   public countOfList: number = 0;
@@ -29,13 +29,19 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
     private readonly _categoryService: CategoryService) {
     super(injector)
   }
+  onEnter(): void {
+    this._productService.filter(this.filter).subscribe(data => {
+      this.listProduct = data;
+    })
+  }
 
   ngOnInit(): void {
     this._productService.getListByPage().subscribe(data => {
       this.listProduct = data;
-      console.log(this.listProduct)
-    });
+    })
+    this.listProduct.find(x => x.productName.includes(this.filter));
   }
+
 
   onClickToNextPage() {
     if (this.page + 1 < this.countOfList) {
@@ -58,7 +64,7 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
     this.redirect("/shop/product-detail/" + id);
   }
 
-  clickToRedirectShop(){
+  clickToRedirectShop() {
     this.redirect("/shop")
   }
 

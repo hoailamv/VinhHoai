@@ -14,5 +14,6 @@ namespace Selling_Website.Entities
         public int? Price { get; set; }
         public int? Quantity { get; set; }
         public string ImgSource { get; set; }
+        public string Size { get; set; }
     }
 }

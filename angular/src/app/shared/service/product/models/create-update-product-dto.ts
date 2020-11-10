@@ -7,6 +7,7 @@ export class CreateOrEditProductDto extends EntityDto<string>{
   price: number;
   quantity: number;
   imgSource: string;
+  size:string;
 
   constructor(initial: Partial<CreateOrEditProductDto> = {}) {
     super(initial);

@@ -37,4 +37,9 @@ export class ProductService {
       { apiName: this.apiName });
   }
 
+  filter(filter: string): Observable<GetProductDto[]> {
+    return this.restService.request({ url: `/api/app/product/filterString?filter=${filter}`, method: 'POST' },
+      { apiName: this.apiName });
+  }
+
 }
