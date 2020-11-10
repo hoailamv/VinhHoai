@@ -16,5 +16,6 @@ namespace Selling_Website.Entities
         [ForeignKey("CustomerId")]
         public Customer Customer { get; set; }
         public string Imagesource { get; set; }
+        public string Size { get; set; }
     }
 }

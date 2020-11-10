@@ -26,5 +26,10 @@ namespace Selling_Website.Products
         {
             return Repository.WhereIf(!string.IsNullOrWhiteSpace(input.id.ToString()), x=> x.CategoryId == input.id);
         }
+
+        public IQueryable<Product> FilterString(string input)
+        {
+            return Repository.WhereIf(!string.IsNullOrWhiteSpace(input), x => x.ProductName.Contains(input));
+        }
     }
 }

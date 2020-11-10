@@ -27,37 +27,29 @@
         <p class="mb-4">Vui lòng liên hệ nhân viên để được hỗ trợ. Hotline: +84 90990090.</p>
         <p><strong class="text-primary h4">${{vn.price}}</strong></p>
         <div class="mb-1 d-flex">
-          <label for="option-sm" class="d-flex mr-3 mb-3">
-            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm"
-                name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
-          </label>
-          <label for="option-md" class="d-flex mr-3 mb-3">
-            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md"
-                name="shop-sizes"></span> <span class="d-inline-block text-black">Medium</span>
-          </label>
-          <label for="option-lg" class="d-flex mr-3 mb-3">
-            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg"
-                name="shop-sizes"></span> <span class="d-inline-block text-black">Large</span>
-          </label>
-          <label for="option-xl" class="d-flex mr-3 mb-3">
-            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl"
-                name="shop-sizes"></span> <span class="d-inline-block text-black"> Extra Large</span>
-          </label>
+          <mat-radio-group class="d-flex mr-3 mb-3" [(ngModel)]="vn.size">
+            <mat-radio-button class="d-inline-block mr-2" *ngFor="let size of sizes" [checked]="size.checked">
+              {{size.name}}
+            </mat-radio-button>
+          </mat-radio-group>
         </div>
         <div class="mb-5">
           <div class="input-group mb-3" style="max-width: 120px;">
             <div class="input-group-prepend">
-              <button (click)="clickToDecreaseQuantity()" class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+              <button (click)="clickToDecreaseQuantity()" class="btn btn-outline-primary js-btn-minus"
+                type="button">&minus;</button>
             </div>
             <input type="text" class="form-control text-center" value="{{quantity}}" placeholder=""
               aria-label="Example text with button addon" aria-describedby="button-addon1">
             <div class="input-group-append">
-              <button (click)="clickToInscreaseQuantity()" class="btn btn-outline-primary js-btn-plus" type="button">&#43;</button>
+              <button (click)="clickToInscreaseQuantity()" class="btn btn-outline-primary js-btn-plus"
+                type="button">&#43;</button>
             </div>
           </div>
 
         </div>
-        <p><a (click)="onClickaddtoCart()" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
+        <p><a (click)="onClickaddtoCart()" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a>
+        </p>
 
       </div>
     </div>
@@ -82,11 +74,6 @@
               <h2 class="item-title"><a href="javascript:void(0)">Smooth Cloth</a></h2>
               <strong class="item-price"><del>$46.00</del> $28.00</strong>
               <div class="star-rating">
-                <span class="icon-star2 text-warning"></span>
-                <span class="icon-star2 text-warning"></span>
-                <span class="icon-star2 text-warning"></span>
-                <span class="icon-star2 text-warning"></span>
-                <span class="icon-star2 text-warning"></span>
               </div>
             </div>
           </div>

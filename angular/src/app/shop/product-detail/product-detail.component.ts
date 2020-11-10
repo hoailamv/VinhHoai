@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { AppBaseComponent } from 'src/app/shared/base.component';
 import { CreateOrEditOrderDto } from 'src/app/shared/service/order/models';
 import { OrderService } from 'src/app/shared/service/order/service';
@@ -6,7 +6,7 @@ import { CreateOrEditOrderDetailDto } from 'src/app/shared/service/orderdetail/m
 import { OrderDetailService } from 'src/app/shared/service/orderdetail/service';
 import { GetProductDto } from 'src/app/shared/service/product/models';
 import { ProductService } from 'src/app/shared/service/product/service';
-
+declare var $;
 @Component({
   templateUrl: 'product-detail.component.html',
   styleUrls: [
@@ -18,7 +18,9 @@ import { ProductService } from 'src/app/shared/service/product/service';
   ]
 })
 
-export class ProductDetailComponent extends AppBaseComponent implements OnInit {
+
+
+export class ProductDetailComponent extends AppBaseComponent implements OnInit, AfterViewInit {
   get id(): string {
     return this.getParamId('id');
   }
@@ -26,6 +28,13 @@ export class ProductDetailComponent extends AppBaseComponent implements OnInit {
   public vm: CreateOrEditOrderDto = new CreateOrEditOrderDto();
   public od: CreateOrEditOrderDetailDto = new CreateOrEditOrderDetailDto();
   public quantity: number = 1;
+  public size: string;
+  public sizes = [
+    { "name": "Small", ID: "D1", "checked": true },
+    { "name": "Medium", ID: "D2", "checked": false },
+    { "name": "Large", ID: "D3", "checked": false },
+    { "name": "Extra", ID: "D4", "checked": false },
+  ]
 
   constructor(injector: Injector,
     private readonly _productservice: ProductService,
@@ -33,13 +42,18 @@ export class ProductDetailComponent extends AppBaseComponent implements OnInit {
     private readonly _orderservice: OrderService) {
     super(injector)
   }
+  ngAfterViewInit(): void {
+    $(".mat-radio-outer-circle").remove();
+    $(".mat-radio-inner-circle").remove();
+  }
 
   ngOnInit(): void {
     this.vm.orderdate = new Date;
     this._orderservice.saveByInput(this.vm).subscribe();
     this._productservice.getById(this.id).subscribe(data => {
       this.vn = data;
-    })
+    });
+
   }
 
   onClickaddtoCart() {
@@ -49,6 +63,7 @@ export class ProductDetailComponent extends AppBaseComponent implements OnInit {
     this.od.price = this.od.quantity * this.vn.price
     this.od.quantity = this.quantity
     this.od.imagesource = this.vn.imgSource;
+    this.od.size = this.vn.size;
     this._orderdetailservice.saveByInput(this.od).subscribe(data => { });
     this.redirect('/payment')
   }

@@ -9,7 +9,9 @@ import { AppFooterComponent } from './layout/footer/app-footer.component';
 import { AppLayoutComponent } from './layout/application-layout/app-layout.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppFooterComponent,
@@ -24,7 +26,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     NgxValidateCoreModule,
     MatIconModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   exports: [
     CoreModule,
@@ -35,7 +40,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppFooterComponent,
     AppTopBarComponent,
     AppLayoutComponent,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: []
 })
