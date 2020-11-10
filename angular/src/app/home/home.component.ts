@@ -2,7 +2,7 @@ import { AuthService } from '@abp/ng.core';
 import { Component, Injector, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { AppBaseComponent } from '../shared/base.component';
-import { CreateOrEditProductDto } from '../shared/service/product/models';
+import { CreateOrEditProductDto, GetProductDto } from '../shared/service/product/models';
 import { ProductService } from '../shared/service/product/service';
 
 @Component({
@@ -10,20 +10,20 @@ import { ProductService } from '../shared/service/product/service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent extends AppBaseComponent implements OnInit {
+  
   get hasLoggedIn(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
+  public productLists: GetProductDto[] = []
 
   constructor(injector: Injector, private oAuthService: OAuthService, private authService: AuthService,
     private readonly _productService: ProductService) {
     super(injector)
   }
   ngOnInit(): void {
-    // this.vmaa.price = 50;
-    // this.vmaa.productName = "Giày Nike Phản Quang";
-    // this.vmaa.productdescription = "Sneaker by Nike ";
-    // this.vmaa.Imgsource = "shoe-4";
-    // this._productService.saveByInput(this.vmaa).subscribe(data =>{})
+    this._productService.getAll().subscribe(data =>{
+      this.productLists = data.slice(0,6);
+    })
   }
   vmaa: CreateOrEditProductDto = new CreateOrEditProductDto();
 
@@ -31,5 +31,8 @@ export class HomeComponent extends AppBaseComponent implements OnInit {
     this.redirect('/shop')
   }
 
+  clickToReDirect(id: string) {
+    this.redirect("/shop/product-detail/" + id);
+  }
 
 }

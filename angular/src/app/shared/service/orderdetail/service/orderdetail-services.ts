@@ -45,5 +45,9 @@ export class OrderDetailService {
     return this.restService.request({ url: `/api/app/orderDetail/countProduct/${id}`, method: 'POST' },
       { apiName: this.apiName });
   }
+  deleteAll(id: string): Observable<void> {
+    return this.restService.request({ url: `/api/app/orderDetail/all?orderid=${id}`, method: 'DELETE' },
+      { apiName: this.apiName });
+  }
 
 }

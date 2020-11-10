@@ -30,12 +30,16 @@ export class CheckOutComponent extends AppBaseComponent implements OnInit {
       });
    }
   onClicktoDeleteOrderDetail(id: string){
-    this._orderdetailservice.deleteById(id).subscribe();
+    this._orderdetailservice.deleteAll(id).subscribe();
   }
   onClicktoCheckOut(){
     this.redirect('/payment/check-out')
   }
   onClicktoThankYou(){
+    const id = 'BCC38E33-E8B1-496A-AF19-BBC3C2533D86'
+    this.onClicktoDeleteOrderDetail(id);
+    this.vm=[];
     this.redirect('/payment/thank-you')
+    
   }
 }

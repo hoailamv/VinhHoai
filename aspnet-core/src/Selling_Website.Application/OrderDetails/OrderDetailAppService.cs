@@ -26,6 +26,7 @@ namespace Selling_Website.OrderDetailDetails
             var list = await GetAll();
             var list1 = list.Where(x => x.OrderId == orderid).Select(x => x.Id).ToList();
             await Repository.DeleteAsync(x => list1.Contains(x.Id));
+            await CurrentUnitOfWork.SaveChangesAsync();
         }
 
         public async Task<int> CountProduct(Guid orderId)

@@ -58,6 +58,10 @@ export class ShopComponent extends AppBaseComponent implements OnInit {
     this.redirect("/shop/product-detail/" + id);
   }
 
+  clickToRedirectShop(){
+    this.redirect("/shop")
+  }
+
   clickToRedirectHome() {
     this.redirect("");
   }
